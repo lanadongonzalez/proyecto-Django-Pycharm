@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selecciones nacionales</title>
+</head>
+<body>
+
+<form method="POST">
+    {%csrf_token%}
+    <fieldset>
+        <legend> Filtro selecciones</legend>
+        <label>Buscar:<input type="text" name="continente" list="continentes" />
+        <datalist id="continentes">
+
+                {% for selecciones in listado_selecciones %}
+            <option value="{{selecciones.continente}}"></option>
+                {% endfor %}
+
+        </datalist>
+
+        </label>
+    </fieldset>
+    <input type="hidden" name="titulo" value="{{titulo_tabla}}">
+    <input type="submit">Filtrar</input>
+</form>
+
+        <table border="1" title="{{titulo_tabla}}">
+            <thead>
+                <tr>
+
+                    <th>Selección</th>
+                    <th>Continente</th>
+                    <th>Número mundiales</th>
+
+                </tr>
+            </thead>
+
+                {% for seleccion in listado_selecciones %}
+                <tr>
+                    <td>{{seleccion.seleccion}}</td>
+                    <td>{{seleccion.continente}}</td>
+                    <td>{{seleccion.numero_mundiales}}</td>
+
+                </tr>
+                {% endfor %}
+
+        </table>
+
+
+</body>
+</html>

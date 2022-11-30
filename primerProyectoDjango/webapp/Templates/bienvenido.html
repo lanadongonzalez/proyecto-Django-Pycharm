@@ -8,8 +8,13 @@
     <H1>Hola Mundo!</H1>
     <div>{{mensaje1}}</div>
     <div>{{mensaje2}}</div>
-    <a href="{%url 'deportes'%}">Actualidad deportiva</a>
-    #Esto es exactamente igual que la linea anterior(sin necesidad de poner el name= en el urlpatterns
-    <a href="/deportes">Actualidad deportiva</a> #Esto es exactamente igual que la linea anterior(sin nec
+    <ul>
+        <! –  'deportes' es el nombre que hemos dado en el name= de urlpatterns––>
+        <li><a href="{%url 'deportes'%}">Actualidad deportiva</a></li>
+        <! –  #Esto es exactamente igual que la linea anterior
+        (sin necesidad de poner el name= en el urlpatterns)––>
+        <li><a href="/listadoalumnos">Lista de alumnos</a></li>
+    </ul>
+
 </body>
 </html>
