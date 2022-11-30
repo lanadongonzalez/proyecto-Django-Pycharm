@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from deportes.views import sports
 from webapp.views import bienvenido, adios
 
 urlpatterns = [
+    path('', bienvenido),
     path('admin/', admin.site.urls),
     # welcome es la petición del cliente (la url http://127.0.0.1:8000/welcome en este caso) y bienvenido la funcion
     # que se ejecuta. Las funciones están en views
     path('welcome/', bienvenido),
     path('goodbye/', adios),
+    path('deportes/', sports, name = 'deportes'),
 ]
