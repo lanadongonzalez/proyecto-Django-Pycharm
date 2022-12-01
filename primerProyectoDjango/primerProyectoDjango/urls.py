@@ -16,17 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from deportes.views import sports, listar_selecciones
+from cliente.views import formulario_aniadir_cliente
+from deportes.views import sports, listar_selecciones, lista_futbolistas
 from webapp.views import bienvenido, adios, listar_datos
 
 urlpatterns = [
     path('', bienvenido),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='administrador'),
     # welcome es la petición del cliente (la url http://127.0.0.1:8000/welcome en este caso) y bienvenido la funcion
     # que se ejecuta. Las funciones están en views
     path('welcome/', bienvenido),
     path('goodbye/', adios),
-    path('deportes/', sports, name = 'deportes'),
-    path('listadoalumnos/', listar_datos, name = 'listado_alumnos'),
-    path('deportes/futbol/listadoselecciones/', listar_selecciones, name = 'listado_selecciones'),
+    path('deportes/', sports, name='deportes'),
+    path('listadoalumnos/', listar_datos, name='listado_alumnos'),
+    path('deportes/futbol/listadoselecciones/', listar_selecciones, name='listado_selecciones'),
+    path('clientes/add', formulario_aniadir_cliente, name='clientes_add'),
+    path('deportes/futbol/listadofutbolista/', lista_futbolistas, name='listado_futbolistas'),
 ]

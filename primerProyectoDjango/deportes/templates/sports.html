@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{titulo}}</title>
+    <title>Fútbol</title>
 </head>
 <body>
-    <h1>{{titulo}}</h1>
-    <div>{{descripcion}}</div>
-    <ul>
-        <li><a href="{'deportes/futbol/listadoselecciones/?titulo=TablaSelecciones'}">Listado selecciones</a></li>
-    </ul>
+<h1>{{titulo}}</h1>
+<div>{{descripcion}}</div>
+<ul>
+    <!--        <li><a href="{'futbol/listadoselecciones/'}">Listado selecciones</a></li>-->
+    <li><a href="{%url 'listado_selecciones'%}">Listado Selecciones</a></li>
+    <li><a href="{%url 'listado_futbolistas'%}">Listado Futbolistas</a></li>
+    <!--        <li><a href="{'futbol/listadoselecciones/?titulo=TablaSelecciones'}">Listado selecciones</a></li>-->
+</ul>
 </body>
 </html>

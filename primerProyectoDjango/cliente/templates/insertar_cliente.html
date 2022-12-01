@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insertar Cliente</title>
+</head>
+<body>
+<H1>Añadir cliente</H1>
+<!--en el campo action cocatena el direcctorio en el que se encuentra (cliente) con add. Y esto será la url-->
+<form action="add" method="post">
+    {%csrf_token%}
+<!--    <input type="text" name="nombre"/>
+    <input type="text" name="apellido"/>
+    <input type="text" name="dni"/>
+    <input type="text" name="email"/>
+    <input type="hidden" name="action" value="guardar">
+   -->
+    <table>{{cliente_form}}</table>
+ <input type="submit" value="Guardar">
+    <h2 style="color:green">{{mensaje}}</h2>
+</form>
+</body>
+</html>

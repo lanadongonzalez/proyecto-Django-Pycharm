@@ -10,14 +10,14 @@
     {%csrf_token%}
     <fieldset>
         <legend> Filtro selecciones</legend>
-        <label>Buscar:<input type="text" name="continente" list="continentes" />
-        <datalist id="continentes">
+        <label>Buscar:<input type="text" name="continente" list="continentes"/>
+            <datalist id="continentes">
 
                 {% for selecciones in listado_selecciones %}
-            <option value="{{selecciones.continente}}"></option>
+                <option value="{{selecciones.continente}}"></option>
                 {% endfor %}
 
-        </datalist>
+            </datalist>
 
         </label>
     </fieldset>
@@ -25,27 +25,27 @@
     <input type="submit">Filtrar</input>
 </form>
 
-        <table border="1" title="{{titulo_tabla}}">
-            <thead>
-                <tr>
+<table border="1" title="{{titulo_tabla}}">
+    <thead>
+    <tr>
 
-                    <th>Selección</th>
-                    <th>Continente</th>
-                    <th>Número mundiales</th>
+        <th>Selección</th>
+        <th>Continente</th>
+        <th>Número mundiales</th>
 
-                </tr>
-            </thead>
+    </tr>
+    </thead>
 
-                {% for seleccion in listado_selecciones %}
-                <tr>
-                    <td>{{seleccion.seleccion}}</td>
-                    <td>{{seleccion.continente}}</td>
-                    <td>{{seleccion.numero_mundiales}}</td>
+    {% for seleccion in listado_selecciones %}
+    <tr>
+        <td>{{seleccion.seleccion}}</td>
+        <td>{{seleccion.continente}}</td>
+        <td>{{seleccion.numero_mundiales}}</td>
 
-                </tr>
-                {% endfor %}
+    </tr>
+    {% endfor %}
 
-        </table>
+</table>
 
 
 </body>

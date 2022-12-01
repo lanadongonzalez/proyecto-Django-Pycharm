@@ -5,16 +5,16 @@
     <title>Bienvenido</title>
 </head>
 <body>
-    <H1>Hola Mundo!</H1>
-    <div>{{mensaje1}}</div>
-    <div>{{mensaje2}}</div>
-    <ul>
-        <! –  'deportes' es el nombre que hemos dado en el name= de urlpatterns––>
-        <li><a href="{%url 'deportes'%}">Actualidad deportiva</a></li>
-        <! –  #Esto es exactamente igual que la linea anterior
-        (sin necesidad de poner el name= en el urlpatterns)––>
-        <li><a href="/listadoalumnos">Lista de alumnos</a></li>
-    </ul>
-
+<H1>Hola Mundo!</H1>
+<div>{{mensaje1}}</div>
+<div>{{mensaje2}}</div>
+<ul>
+    <! – 'deportes' es el nombre que hemos dado en el name= de urlpatterns––>
+    <li><a href="{%url 'deportes'%}">Actualidad deportiva</a></li>
+    <! – #Esto es exactamente igual que la linea anterior
+    (sin necesidad de poner el name= en el urlpatterns)––>
+    <li><a href="/listadoalumnos">Lista de alumnos</a></li>
+    <li><a href="{%url 'clientes_add'%}">Añadir cliente a la base de datos</a></li>
+</ul>
 </body>
 </html>
