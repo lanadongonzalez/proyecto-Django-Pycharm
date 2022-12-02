@@ -5,6 +5,56 @@
     <title>Futbolistas</title>
 </head>
 <body>
-prueba
+<form action="{%url 'listado_futbolistas'%}" method="POST">
+    {%csrf_token%}
+    <label for="pos">Posición</label>
+    <select name="posicion" id="pos">
+        {% for posicion in filtro_posicion %}
+        <option value="posicion">{{posicion}}</option>
+        {% endfor %}
+    </select>
+    <label for="nac">Nacionalidad</label>
+    <select name="nacionalidad" id="nac">
+        {% for nacionalidad in filtro_nacionalidad %}
+        <option value="nacionalidad">{{nacionalidad}}</option>
+        {% endfor %}
+    </select>
+    <label for="equipo">Equipo</label>
+    <select name="equipo" id="equipo">
+        {% for equipo in filtro_equipo %}
+        <option value="equipo">{{equipo}}</option>
+        {% endfor %}
+    </select>
+    <input type="hidden" name="action" value="filtrar">
+    <input type="submit" value="Filtrar"/>
+</form>
+<table border="1" title="Listados Futbolistas">
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Equipo</th>
+        <th>Edad</th>
+        <th>Nacionalidad</th>
+        <th>Posición</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for jugador in futbolistas %}
+    <tr>
+        <td>{{jugador.nombre}}</td>
+        <td>{{jugador.equipo}}</td>
+        <td>{{jugador.edad}}</td>
+        <td>{{jugador.nacionalidad}}</td>
+        <td>{{jugador.posicion}}</td>
+        <td><input type="submit" value="Eliminar"/><input type="submit" value="Actualizar"/></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<ul>
+    <a href="{%url 'add_futbolistas'%}">Añadir futbolista</a>
+</ul>
+
 </body>
 </html>

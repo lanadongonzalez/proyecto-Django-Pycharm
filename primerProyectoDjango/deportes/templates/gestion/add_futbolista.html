@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Añadir Futbolista</title>
+</head>
+<body>
+
+<H1>Añadir Futbolista</H1>
+<form action="{%url 'add_futbolistas'%}" method="post">
+    {%csrf_token%}
+    <table>
+        {{futbolista_form}}
+    </table>
+    <input type="submit" value="Guardar">
+
+    <h2 style="color:green">{{mensaje}}</h2>
+</form>
+
+<a href="{%url 'listado_futbolistas'%}">Listado Futbolistas</a>
+
+</body>
+</html>
